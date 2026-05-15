@@ -1,0 +1,1808 @@
+<!-- =========================================================
+🏆 ĐẠI HỘI TDTT XÃ KON GANG 2026
+🌟 FULL WEBSITE + CMS ADMIN CHUYÊN NGHIỆP
+========================================================= -->
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ĐẠI HỘI TDTT XÃ KON GANG 2026</title>
+
+<meta name="description"
+content="Trang thông tin điện tử Đại hội TDTT xã Kon Gang lần thứ I năm 2026">
+
+<meta name="keywords"
+content="Đại hội TDTT Kon Gang 2026">
+
+<meta property="og:title"
+content="ĐẠI HỘI TDTT XÃ KON GANG 2026">
+
+<meta name="theme-color" content="#0033aa">
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap"
+rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Be Vietnam Pro',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#eef3ff,#ffffff);
+overflow-x:hidden;
+transition:0.3s;
+}
+
+/* DARK MODE */
+
+.dark-mode{
+background:#0b1020;
+color:white;
+}
+
+.dark-mode .card{
+background:#111827;
+color:white;
+}
+
+.dark-mode table th{
+background:#1f2937;
+color:white;
+}
+
+.dark-mode .menu{
+background:#111827;
+}
+
+.dark-mode .top-item{
+border-bottom:1px solid #333;
+}
+
+.dark-mode .visitor-card{
+background:#111827;
+color:white;
+}
+
+.dark-mode .news-item{
+background:#111827;
+}
+
+.dark-mode .news-text h3{
+color:#ffd700;
+}
+
+/* LED */
+
+.led-bar{
+background:linear-gradient(90deg,#001c64,#0033aa,#001c64);
+color:#ffd700;
+padding:14px;
+font-size:28px;
+font-weight:800;
+border-bottom:4px solid #ffd700;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#00154f,#0033aa);
+padding:18px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+color:white;
+background-size:cover;
+background-position:center;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.logo-area img{
+width:95px;
+height:95px;
+border-radius:50%;
+background:white;
+padding:5px;
+object-fit:cover;
+}
+
+.title-area h1{
+font-size:42px;
+font-weight:800;
+color:#ffd700;
+}
+
+.title-area h2{
+font-size:22px;
+margin-top:6px;
+}
+
+.right-header{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.clock{
+background:black;
+padding:12px 18px;
+border-radius:12px;
+font-size:32px;
+font-weight:700;
+color:#00ff66;
+}
+
+.admin-btn{
+background:#ffd700;
+border:none;
+padding:12px 22px;
+border-radius:12px;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+}
+
+/* MENU */
+
+.menu{
+background:#002b8f;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+padding:16px 22px;
+font-weight:700;
+transition:0.3s;
+}
+
+.menu a:hover{
+background:#ffd700;
+color:black;
+}
+
+#searchInput{
+padding:10px 15px;
+border:none;
+border-radius:10px;
+margin:10px;
+width:240px;
+}
+
+/* HERO */
+
+.hero{
+height:620px;
+background:
+linear-gradient(rgba(0,0,0,0.55),
+rgba(0,0,0,0.55)),
+url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=2070')
+center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+border-bottom-left-radius:40px;
+border-bottom-right-radius:40px;
+overflow:hidden;
+margin-bottom:25px;
+}
+
+.overlay h1{
+font-size:72px;
+font-weight:800;
+color:#ffd700;
+}
+
+.overlay p{
+font-size:28px;
+color:white;
+margin-top:18px;
+}
+
+/* SPORTS */
+
+.sports{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:18px;
+margin-top:40px;
+}
+
+.sport{
+background:white;
+padding:18px 22px;
+border-radius:18px;
+font-size:22px;
+font-weight:700;
+min-width:180px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+text-decoration:none;
+color:black;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.sport:hover{
+transform:translateY(-5px);
+background:#ffd700;
+}
+
+/* BUTTON */
+
+.top-buttons{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 24px;
+font-size:18px;
+font-weight:700;
+border:none;
+border-radius:14px;
+cursor:pointer;
+}
+
+.tv-btn{
+background:#ffd700;
+}
+
+.live-btn{
+background:red;
+color:white;
+}
+
+/* MAIN */
+
+.main{
+display:grid;
+grid-template-columns:1fr 2fr 1fr;
+gap:22px;
+padding:25px;
+max-width:1500px;
+margin:auto;
+align-items:start;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+border:1px solid rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.card-title{
+background:linear-gradient(90deg,#0033aa,#0055ff);
+padding:16px;
+color:white;
+font-size:24px;
+font-weight:800;
+text-align:center;
+}
+
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th{
+background:#f1f4ff;
+padding:14px;
+}
+
+table td{
+padding:14px;
+border-bottom:1px solid #eee;
+text-align:center;
+}
+
+#medalTable tr{
+transition:0.3s;
+}
+
+#medalTable tr:hover{
+background:#f5f8ff;
+}
+
+/* TOP */
+
+.top-list{
+padding:18px;
+}
+
+.top-item{
+display:flex;
+justify-content:space-between;
+padding:14px 0;
+border-bottom:1px solid #eee;
+animation:fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* NEWS */
+
+.news-gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px;
+padding:0 25px 25px;
+max-width:1500px;
+margin:auto;
+}
+
+.news-container{
+padding:15px;
+}
+
+.news-item{
+background:white;
+padding:15px;
+border-radius:18px;
+margin-bottom:18px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+display:flex;
+gap:15px;
+}
+
+.news-item img{
+width:180px;
+height:130px;
+object-fit:cover;
+border-radius:14px;
+}
+
+.news-text{
+flex:1;
+}
+
+.news-text h3{
+font-size:24px;
+margin-bottom:10px;
+color:#0033aa;
+}
+
+.news-file{
+margin-top:12px;
+padding:10px 14px;
+background:#f4f7ff;
+border-radius:12px;
+font-weight:600;
+}
+
+.news-file a{
+text-decoration:none;
+color:#0033aa;
+}
+
+.news-date{
+margin-top:12px;
+font-size:14px;
+color:#777;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+padding:15px;
+}
+
+.gallery-grid img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:14px;
+}
+
+/* FLOATING QR */
+
+.floating-qr{
+position:fixed;
+right:20px;
+bottom:20px;
+background:white;
+padding:15px;
+border-radius:18px;
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+z-index:999;
+text-align:center;
+}
+
+.qr-title{
+font-size:16px;
+font-weight:700;
+margin-bottom:10px;
+color:#0033aa;
+}
+
+/* VISITOR */
+
+.visitor-box{
+padding:30px;
+display:flex;
+justify-content:center;
+}
+
+.visitor-card{
+background:white;
+padding:25px 40px;
+border-radius:20px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+text-align:center;
+font-size:22px;
+font-weight:700;
+}
+
+.visitor-card h3{
+margin-bottom:15px;
+color:#0033aa;
+}
+
+/* FOOTER */
+
+footer{
+background:linear-gradient(135deg,#00154f,#0033aa);
+padding:28px;
+text-align:center;
+font-size:22px;
+font-weight:700;
+color:white;
+}
+
+/* MODAL */
+
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal-content{
+background:white;
+padding:35px;
+border-radius:20px;
+width:700px;
+max-width:95%;
+}
+
+.modal-content h2{
+margin-bottom:20px;
+color:#0033aa;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select{
+width:100%;
+padding:14px;
+margin-bottom:14px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+}
+
+.modal-content button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#0033aa;
+color:white;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+}
+
+/* ADMIN PANEL */
+
+.admin-panel{
+position:fixed;
+top:0;
+right:-460px;
+width:460px;
+height:100%;
+background:white;
+overflow:auto;
+padding:25px;
+transition:0.4s;
+z-index:99999;
+box-shadow:-5px 0 20px rgba(0,0,0,0.2);
+}
+
+.admin-panel.active{
+right:0;
+}
+
+.admin-panel h2{
+margin-bottom:20px;
+color:#0033aa;
+}
+
+.admin-panel h3{
+margin:20px 0 10px;
+color:#0033aa;
+}
+
+.admin-panel input,
+.admin-panel textarea,
+.admin-panel select{
+width:100%;
+padding:14px;
+margin-bottom:14px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+}
+
+.admin-panel button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#0033aa;
+color:white;
+font-size:18px;
+font-weight:700;
+margin-bottom:12px;
+cursor:pointer;
+}
+
+.close-btn{
+background:red !important;
+}
+
+/* LIVE POPUP */
+
+#livePopup{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+background:red;
+color:white;
+padding:18px 30px;
+border-radius:15px;
+font-weight:700;
+display:none;
+z-index:999999;
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* TV MODE */
+
+.tv-mode{
+background:black;
+color:white;
+}
+
+.tv-mode .card{
+background:#111;
+color:white;
+}
+
+.tv-mode .overlay h1{
+font-size:90px;
+}
+
+.tv-mode .card-title{
+font-size:36px;
+}
+
+.tv-mode table td,
+.tv-mode table th{
+font-size:28px;
+padding:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+.main{
+grid-template-columns:1fr;
+padding:15px;
+}
+
+.news-gallery{
+grid-template-columns:1fr;
+padding:15px;
+}
+
+.overlay h1{
+font-size:42px;
+}
+
+.hero{
+height:auto;
+padding:80px 20px;
+}
+
+.admin-panel{
+width:100%;
+}
+
+.news-item{
+flex-direction:column;
+}
+
+.news-item img{
+width:100%;
+height:240px;
+}
+
+}
+
+@media(max-width:768px){
+
+.floating-qr{
+right:10px;
+bottom:10px;
+padding:10px;
+transform:scale(0.85);
+transform-origin:bottom right;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LIVE POPUP -->
+
+<div id="livePopup">
+🔴 ĐANG THI ĐẤU TRỰC TIẾP
+</div>
+
+<!-- LED -->
+
+<div class="led-bar">
+
+<marquee id="ledText">
+🏆 NHIỆT LIỆT CHÀO MỪNG ĐẠI HỘI TDTT XÃ KON GANG LẦN THỨ I NĂM 2026
+</marquee>
+
+</div>
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="logo-area">
+
+<img id="logoPreview"
+src="https://cdn-icons-png.flaticon.com/512/857/857681.png">
+
+<div class="title-area">
+
+<h1 id="mainTitle">
+ĐẠI HỘI TDTT XÃ KON GANG
+</h1>
+
+<h2>
+LẦN THỨ I - NĂM 2026
+</h2>
+
+</div>
+
+</div>
+
+<div class="right-header">
+
+<div class="clock" id="clock"></div>
+
+<button class="admin-btn"
+onclick="openLogin()">
+
+🔐 ADMIN
+
+</button>
+
+</div>
+
+</header>
+
+<!-- MENU -->
+
+<nav class="menu">
+
+<a href="#">Trang chủ</a>
+<a href="#">Huy chương</a>
+<a href="#">Lịch thi đấu</a>
+<a href="#">Tin tức</a>
+<a href="#">Hình ảnh</a>
+
+<a href="#"
+onclick="toggleDarkMode()">
+
+🌙 Dark Mode
+
+</a>
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Tìm kiếm tin tức...">
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>ĐẠI HỘI TDTT 2026</h1>
+
+<p>
+Đoàn kết - Trung thực - Cao thượng - Tiến bộ
+</p>
+
+<div class="sports">
+
+<a href="#"
+class="sport"
+onclick="openSchedule('Bóng bàn')">
+🏓 Bóng bàn
+</a>
+
+<a href="#"
+class="sport"
+onclick="openSchedule('Bóng chuyền')">
+🏐 Bóng chuyền
+</a>
+
+<a href="#"
+class="sport"
+onclick="openSchedule('Đẩy gậy')">
+🏸 Đẩy gậy
+</a>
+
+<a href="#"
+class="sport"
+onclick="openSchedule('Kéo co')">
+💪 Kéo co
+</a>
+
+<a href="#"
+class="sport"
+onclick="openSchedule('Bắn nỏ')">
+🎯 Bắn nỏ
+</a>
+
+<a href="#"
+class="sport"
+onclick="openSchedule('Nhảy bao bố')">
+🏃 Nhảy bao bố
+</a>
+
+</div>
+
+<div class="top-buttons">
+
+<button class="btn tv-btn"
+onclick="toggleTV()">
+
+📺 CHẾ ĐỘ TV
+
+</button>
+
+<button class="btn live-btn"
+onclick="showLivePopup()">
+
+🔴 LIVE
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MAIN -->
+
+<section class="main">
+
+<div class="card">
+
+<div class="card-title">
+🏆 TOP 5
+</div>
+
+<div class="top-list" id="topTeams"></div>
+
+</div>
+
+<div class="card">
+
+<div class="card-title">
+🥇 BẢNG XẾP HẠNG
+</div>
+
+<table id="medalTable"></table>
+
+</div>
+
+<div class="card">
+
+<div class="card-title">
+📅 LỊCH THI ĐẤU HÔM NAY
+</div>
+
+<div class="top-list">
+
+<div class="top-item">
+<span>🏓 Bóng bàn</span>
+<span>08:00</span>
+</div>
+
+<div class="top-item">
+<span>🏐 Bóng chuyền</span>
+<span>09:30</span>
+</div>
+
+<div class="top-item">
+<span>💪 Kéo co</span>
+<span>14:00</span>
+</div>
+
+<div class="top-item">
+<span>🎯 Bắn nỏ</span>
+<span>15:30</span>
+</div>
+
+<div class="top-item">
+<span>🏃 Nhảy bao bố</span>
+<span>16:30</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NEWS -->
+
+<section class="news-gallery">
+
+<div class="card">
+
+<div class="card-title">
+📰 TIN TỨC
+</div>
+
+<div class="news-container"
+id="newsContainer"></div>
+
+</div>
+
+<div class="card">
+
+<div class="card-title">
+🖼 HÌNH ẢNH
+</div>
+
+<div class="gallery-grid"
+id="gallery"></div>
+
+</div>
+
+</section>
+
+<!-- QR -->
+
+<div class="floating-qr">
+
+<div class="qr-title">
+📱 QR WEBSITE
+</div>
+
+<div id="qrcode"></div>
+
+</div>
+
+<!-- VISITOR -->
+
+<div class="visitor-box">
+
+<div class="visitor-card">
+
+<h3>📊 THỐNG KÊ TRUY CẬP</h3>
+
+<p>
+👥 Tổng lượt truy cập:
+<span id="visitorCount">0</span>
+</p>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 ĐẠI HỘI TDTT XÃ KON GANG
+</footer>
+
+<!-- LOGIN -->
+
+<div class="modal"
+id="loginModal">
+
+<div class="modal-content"
+style="width:400px;">
+
+<h2>🔐 ĐĂNG NHẬP ADMIN</h2>
+
+<input type="text"
+id="username"
+placeholder="Tài khoản">
+
+<input type="password"
+id="password"
+placeholder="Mật khẩu">
+
+<button onclick="loginAdmin()">
+ĐĂNG NHẬP
+</button>
+
+</div>
+
+</div>
+
+<!-- MODAL LỊCH -->
+
+<div class="modal"
+id="scheduleModal">
+
+<div class="modal-content">
+
+<h2 id="scheduleTitle">
+📅 LỊCH THI ĐẤU
+</h2>
+
+<div id="scheduleContent"
+style="
+line-height:1.8;
+font-size:18px;
+max-height:500px;
+overflow:auto;
+"></div>
+
+<button
+style="margin-top:20px;background:red;"
+onclick="closeSchedule()">
+
+ĐÓNG
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ADMIN -->
+
+<div class="admin-panel"
+id="adminPanel">
+
+<h2>⚙️ CMS QUẢN TRỊ</h2>
+
+<input type="text"
+id="editTitle"
+placeholder="Tiêu đề website">
+
+<input type="text"
+id="editLED"
+placeholder="Nội dung LED">
+
+<h3>🎨 GIAO DIỆN</h3>
+
+<label>Background Trang Chủ</label>
+
+<input type="file"
+id="uploadBackground"
+accept="image/*">
+
+<label>Background Header</label>
+
+<input type="file"
+id="uploadHeader"
+accept="image/*">
+
+<label>Logo Website</label>
+
+<input type="file"
+id="uploadLogo"
+accept="image/*">
+
+<h3>📅 QUẢN LÝ LỊCH THI ĐẤU</h3>
+
+<select id="sportSelect">
+
+<option>Bóng bàn</option>
+<option>Bóng chuyền</option>
+<option>Đẩy gậy</option>
+<option>Kéo co</option>
+<option>Bắn nỏ</option>
+<option>Nhảy bao bố</option>
+
+</select>
+
+<textarea
+id="scheduleEditor"
+rows="8"
+placeholder="Nhập lịch thi đấu">
+</textarea>
+
+<button onclick="saveSchedule()">
+📅 LƯU LỊCH
+</button>
+
+<h3>📰 THÊM TIN TỨC</h3>
+
+<input type="text"
+id="newsTitle"
+placeholder="Tiêu đề">
+
+<textarea
+id="newsContent"
+rows="4"
+placeholder="Nội dung">
+</textarea>
+
+<input type="file"
+id="newsImage"
+accept="image/*">
+
+<input type="file"
+id="newsFile">
+
+<button onclick="addNews()">
+📰 ĐĂNG TIN
+</button>
+
+<h3>🖼 THÊM HÌNH ẢNH</h3>
+
+<input type="file"
+id="uploadGallery"
+multiple
+accept="image/*">
+
+<button onclick="addGallery()">
+🖼 UPLOAD ẢNH
+</button>
+
+<button onclick="saveCMS()">
+💾 LƯU WEBSITE
+</button>
+
+<button class="close-btn"
+onclick="closeAdmin()">
+❌ ĐÓNG
+</button>
+
+</div>
+
+<script>
+
+/* API */
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycby6B7zx9rqypFtfBiMLyP5JgULOeMnU8-02B17I_ybxn2xri5GlMbed5rvxKk6eKMikYQ/exec";
+
+/* CLOCK */
+
+function updateClock(){
+
+document.getElementById("clock")
+.innerHTML =
+new Date().toLocaleTimeString('vi-VN');
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+/* QR */
+
+new QRCode(
+document.getElementById("qrcode"),
+{
+text:window.location.href,
+width:180,
+height:180
+}
+);
+
+/* DARK MODE */
+
+function toggleDarkMode(){
+
+document.body.classList.toggle("dark-mode");
+
+localStorage.setItem(
+"darkMode",
+document.body.classList.contains("dark-mode")
+);
+
+}
+
+if(localStorage.getItem("darkMode")==="true"){
+
+document.body.classList.add("dark-mode");
+
+}
+
+/* TV MODE */
+
+function toggleTV(){
+
+document.body.classList.toggle("tv-mode");
+
+}
+
+/* LIVE POPUP */
+
+function showLivePopup(){
+
+const popup =
+document.getElementById("livePopup");
+
+popup.style.display="block";
+
+setTimeout(()=>{
+
+popup.style.display="none";
+
+},4000);
+
+}
+
+setTimeout(showLivePopup,3000);
+
+/* LOGIN */
+
+function openLogin(){
+
+document.getElementById("loginModal")
+.style.display="flex";
+
+}
+
+const ADMIN_USER = "admin";
+const ADMIN_PASS = "kongang2026";
+
+function loginAdmin(){
+
+const user =
+document.getElementById("username").value;
+
+const pass =
+document.getElementById("password").value;
+
+if(user===ADMIN_USER && pass===ADMIN_PASS){
+
+document.getElementById("loginModal")
+.style.display="none";
+
+document.getElementById("adminPanel")
+.classList.add("active");
+
+confetti({
+particleCount:250,
+spread:180
+});
+
+}else{
+
+alert("Sai tài khoản hoặc mật khẩu");
+
+}
+
+}
+
+function closeAdmin(){
+
+document.getElementById("adminPanel")
+.classList.remove("active");
+
+}
+
+/* LỊCH THI ĐẤU */
+
+let schedules={
+
+"Bóng bàn":
+`<p>08:00 - Vòng bảng</p>
+<p>14:00 - Chung kết</p>`,
+
+"Bóng chuyền":
+`<p>07:30 - Thi đấu bảng</p>
+<p>17:00 - Chung kết</p>`,
+
+"Đẩy gậy":
+`<p>08:30 - Loại trực tiếp</p>`,
+
+"Kéo co":
+`<p>09:00 - Vòng loại</p>`,
+
+"Bắn nỏ":
+`<p>08:00 - Cá nhân</p>`,
+
+"Nhảy bao bố":
+`<p>09:30 - Chung kết</p>`
+
+};
+
+if(localStorage.getItem("schedules")){
+
+schedules =
+JSON.parse(localStorage.getItem("schedules"));
+
+}
+
+function openSchedule(name){
+
+document.getElementById("scheduleModal")
+.style.display="flex";
+
+document.getElementById("scheduleTitle")
+.innerHTML="📅 " + name;
+
+document.getElementById("scheduleContent")
+.innerHTML=schedules[name];
+
+}
+
+function closeSchedule(){
+
+document.getElementById("scheduleModal")
+.style.display="none";
+
+}
+
+function saveSchedule(){
+
+const sport =
+document.getElementById("sportSelect").value;
+
+const content =
+document.getElementById("scheduleEditor").value;
+
+schedules[sport] =
+content.replace(/\n/g,"<p>") + "</p>";
+
+localStorage.setItem(
+"schedules",
+JSON.stringify(schedules)
+);
+
+alert("✅ Đã lưu lịch");
+
+}
+
+document.getElementById("sportSelect")
+.addEventListener("change",function(){
+
+const sport=this.value;
+
+document.getElementById("scheduleEditor")
+.value=schedules[sport]
+.replace(/<p>/g,'')
+.replace(/<\/p>/g,'\n');
+
+});
+
+/* SAVE WEBSITE */
+
+function saveCMS(){
+
+const title =
+document.getElementById("editTitle").value;
+
+const led =
+document.getElementById("editLED").value;
+
+if(title){
+
+document.getElementById("mainTitle")
+.innerText=title;
+
+localStorage.setItem("title",title);
+
+}
+
+if(led){
+
+document.getElementById("ledText")
+.innerText=led;
+
+localStorage.setItem("led",led);
+
+}
+
+alert("✅ Đã lưu website");
+
+}
+
+/* LOAD STORAGE */
+
+window.onload=function(){
+
+if(localStorage.getItem("title")){
+
+document.getElementById("mainTitle")
+.innerText=
+localStorage.getItem("title");
+
+}
+
+if(localStorage.getItem("led")){
+
+document.getElementById("ledText")
+.innerText=
+localStorage.getItem("led");
+
+}
+
+loadNewsStorage();
+loadGalleryStorage();
+
+};
+
+/* BACKGROUND */
+
+document.getElementById("uploadBackground")
+.addEventListener("change",function(e){
+
+const reader=new FileReader();
+
+reader.onload=function(a){
+
+document.querySelector(".hero")
+.style.backgroundImage=
+`linear-gradient(rgba(0,0,0,0.55),
+rgba(0,0,0,0.55)),
+url('${a.target.result}')`;
+
+};
+
+reader.readAsDataURL(e.target.files[0]);
+
+});
+
+/* HEADER */
+
+document.getElementById("uploadHeader")
+.addEventListener("change",function(e){
+
+const reader=new FileReader();
+
+reader.onload=function(a){
+
+document.querySelector(".header")
+.style.backgroundImage=
+`url('${a.target.result}')`;
+
+};
+
+reader.readAsDataURL(e.target.files[0]);
+
+});
+
+/* LOGO */
+
+document.getElementById("uploadLogo")
+.addEventListener("change",function(e){
+
+const reader=new FileReader();
+
+reader.onload=function(a){
+
+document.getElementById("logoPreview")
+.src=a.target.result;
+
+};
+
+reader.readAsDataURL(e.target.files[0]);
+
+});
+
+/* NEWS */
+
+function addNews(){
+
+const title =
+document.getElementById("newsTitle").value;
+
+const content =
+document.getElementById("newsContent").value;
+
+const image =
+document.getElementById("newsImage").files[0];
+
+const file =
+document.getElementById("newsFile").files[0];
+
+if(title==="") return;
+
+const reader = new FileReader();
+
+reader.onload=function(e){
+
+let fileHTML="";
+
+if(file){
+
+const fileURL=
+URL.createObjectURL(file);
+
+fileHTML=
+`
+<div class="news-file">
+
+📎 <a href="${fileURL}" target="_blank">
+${file.name}
+</a>
+
+</div>
+`;
+
+}
+
+const div=document.createElement("div");
+
+div.className="news-item";
+
+div.innerHTML=
+`
+<img src="${e.target.result}">
+
+<div class="news-text">
+
+<h3>${title}</h3>
+
+<p>${content}</p>
+
+${fileHTML}
+
+<div class="news-date">
+
+🕒 ${new Date().toLocaleString('vi-VN')}
+
+</div>
+
+</div>
+`;
+
+document.getElementById("newsContainer")
+.prepend(div);
+
+saveNewsStorage();
+
+};
+
+if(image){
+
+reader.readAsDataURL(image);
+
+}
+
+}
+
+/* NEWS STORAGE */
+
+function saveNewsStorage(){
+
+localStorage.setItem(
+"newsData",
+document.getElementById("newsContainer").innerHTML
+);
+
+}
+
+function loadNewsStorage(){
+
+const data =
+localStorage.getItem("newsData");
+
+if(data){
+
+document.getElementById("newsContainer")
+.innerHTML=data;
+
+}
+
+}
+
+/* GALLERY */
+
+function addGallery(){
+
+const files=
+document.getElementById("uploadGallery").files;
+
+for(let i=0;i<files.length;i++){
+
+const reader=new FileReader();
+
+reader.onload=function(e){
+
+const img=document.createElement("img");
+
+img.src=e.target.result;
+
+document.getElementById("gallery")
+.prepend(img);
+
+saveGalleryStorage();
+
+};
+
+reader.readAsDataURL(files[i]);
+
+}
+
+}
+
+/* GALLERY STORAGE */
+
+function saveGalleryStorage(){
+
+localStorage.setItem(
+"galleryData",
+document.getElementById("gallery").innerHTML
+);
+
+}
+
+function loadGalleryStorage(){
+
+const data =
+localStorage.getItem("galleryData");
+
+if(data){
+
+document.getElementById("gallery")
+.innerHTML=data;
+
+}
+
+}
+
+/* SEARCH */
+
+document.getElementById("searchInput")
+.addEventListener("keyup",function(){
+
+const value =
+this.value.toLowerCase();
+
+document
+.querySelectorAll(".news-item")
+.forEach(item=>{
+
+item.style.display =
+item.innerText.toLowerCase()
+.includes(value)
+? "flex"
+: "none";
+
+});
+
+});
+
+/* VISITOR */
+
+let visitor =
+localStorage.getItem("visitorCount");
+
+if(!visitor){
+
+visitor = 10258;
+
+}else{
+
+visitor = parseInt(visitor) + 1;
+
+}
+
+localStorage.setItem(
+"visitorCount",
+visitor
+);
+
+document.getElementById("visitorCount")
+.innerText = visitor;
+
+/* REALTIME RANKING */
+
+async function loadRealtimeRanking(){
+
+try{
+
+const response =
+await fetch(API_URL);
+
+const data =
+await response.json();
+
+let tableHTML = `
+<tr>
+<th>Hạng</th>
+<th>Đơn vị</th>
+<th>🥇</th>
+<th>🥈</th>
+<th>🥉</th>
+<th>Tổng</th>
+</tr>
+`;
+
+data.forEach((item,index)=>{
+
+tableHTML += `
+<tr>
+<td>${index+1}</td>
+<td>${item.donvi}</td>
+<td>${item.gold}</td>
+<td>${item.silver}</td>
+<td>${item.bronze}</td>
+<td>${item.total}</td>
+</tr>
+`;
+
+});
+
+document
+.getElementById("medalTable")
+.innerHTML = tableHTML;
+
+/* TOP 5 */
+
+let topHTML = "";
+
+data.slice(0,5).forEach((item,index)=>{
+
+topHTML += `
+<div class="top-item">
+<span>${index+1}. ${item.donvi}</span>
+<span>🥇 ${item.gold}</span>
+</div>
+`;
+
+});
+
+document
+.getElementById("topTeams")
+.innerHTML = topHTML;
+
+}catch(error){
+
+console.log("Realtime ranking error:", error);
+
+}
+
+}
+
+loadRealtimeRanking();
+
+setInterval(
+loadRealtimeRanking,
+5000
+);
+
+/* AUTO BACKUP */
+
+setInterval(()=>{
+
+const backupData = {
+
+title:
+document.getElementById("mainTitle").innerText,
+
+news:
+document.getElementById("newsContainer").innerHTML,
+
+gallery:
+document.getElementById("gallery").innerHTML,
+
+time:new Date()
+
+};
+
+localStorage.setItem(
+"websiteBackup",
+JSON.stringify(backupData)
+);
+
+console.log("Backup completed");
+
+},60000);
+
+/* CONFETTI */
+
+setTimeout(()=>{
+
+confetti({
+particleCount:300,
+spread:180
+});
+
+},1200);
+
+</script>
+
+</body>
+</html>
